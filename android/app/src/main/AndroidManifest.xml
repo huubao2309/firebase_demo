@@ -1,10 +1,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:installLocation="preferExternal"
     package="com.example.firebase_demo">
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
          In most cases you can leave this as-is, but you if you want to provide
          additional functionality it is fine to subclass or reimplement
          FlutterApplication and put your custom class here. -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="firebase_demo"
@@ -43,5 +53,36 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+<!--        <service-->
+<!--            android:name=".presentation.service.notifications.ExMessagingService"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="false"-->
+<!--            android:stopWithTask="false">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.google.firebase.MESSAGING_EVENT" />-->
+<!--            </intent-filter>-->
+<!--        </service>-->
+<!--        <service-->
+<!--            android:name=".presentation.auth.authenticator.AuthenticatorService"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="false">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.accounts.AccountAuthenticator" />-->
+<!--            </intent-filter>-->
+
+<!--            <meta-data-->
+<!--                android:name="android.accounts.AccountAuthenticator"-->
+<!--                android:resource="@xml/authenticator" />-->
+<!--        </service>-->
+
+<!--        <service-->
+<!--            android:name=".presentation.service.notificationReader.ActivityReaderService"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="false" />-->
+<!--        <service-->
+<!--            android:name=".presentation.service.updateSetting.UpdateSettingService"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="false" />-->
     </application>
 </manifest>
